@@ -18,16 +18,16 @@ async function chackWeather(city) {
 
 
     if(data.weather[0].main =='Clouds'){
-        weatherIcon.src = 'cold-removebg-preview.png'
+        weatherIcon.src = './assets/cold-removebg-preview.png'
     }
     else if (data.weather[0].main =='Clear'){
-        weatherIcon.src = 'clear-removebg-preview.png'
+        weatherIcon.src = './assets/clear-removebg-preview.png'
     }
     else if (data.weather[0].main =='Drizzle'){
-        weatherIcon.src = 'drizzle-removebg-preview.png'
+        weatherIcon.src = './assets/drizzle-removebg-preview.png'
     }
     else if (data.weather[0].main =='Mist'){
-        weatherIcon.src = 'mist-removebg-preview.png'
+        weatherIcon.src = './assets/mist-removebg-preview.png'
     }
 
     
@@ -37,5 +37,10 @@ async function chackWeather(city) {
 searchBtn.addEventListener('click',() => {
     chackWeather(searchBox.value)
 });
+searchBox.addEventListener("keydown",(event) => {
+  if(event.key === 'Enter'){
+    searchBtn.click()
+  }  
+})
 
 
